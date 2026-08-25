@@ -1,0 +1,27 @@
+
+=== AUTO-GENERATED RISK SUMMARY MEMO ===
+
+As of Q3 FY2026, NVIDIA's disclosed >=10% direct customers account for
+61% of total revenue, up materially from prior periods — a trend
+NVIDIA itself acknowledges in its risk factor disclosures. This concentration
+sits alongside a supply chain that is itself narrow: foundry production is
+single-sourced through TSMC in Taiwan, and advanced memory (HBM) sourcing is
+split across a small number of qualified suppliers, most based in South Korea.
+
+The combination creates a dual-sided concentration risk: revenue depends on a
+small number of hyperscale customers, while production depends on a small
+number of counterparties concentrated in Taiwan and South Korea. A disruption
+at either end of this chain — loss of a major customer, or a supply
+disruption tied to Taiwan Strait tensions — would have an outsized impact on
+NVIDIA relative to a company with a more diversified customer or supplier
+base.
+
+Key flags identified:
+  - HIGH customer concentration: disclosed >=10% customers represent 61% of revenue (>30% threshold).
+  - Single-country supply dependency: Taiwan accounts for an estimated 55.6% of weighted supplier exposure — material geopolitical/tariff risk (Taiwan Strait risk specifically, if Taiwan).
+  - Regulatory overlay: U.S. export controls on advanced AI chips to China have already constrained a previously significant revenue market — a live example of geographic/regulatory risk converting into realized revenue impact, not just a hypothetical.
+
+Caveat: customer identities are not disclosed by NVIDIA (referred to only as
+"Customer A," "Customer B," etc. in filings); supplier-side weightings in this
+analysis are analyst estimates based on public industry reporting, not
+confirmed trade volumes, since NVDA does not disclose exact supplier splits.

@@ -1,0 +1,7 @@
+supplier,role,country,est_weight,confidence
+TSMC,Foundry (wafer fab),Taiwan,0.9,"high - single-source, widely reported"
+SK Hynix,HBM memory,South Korea,0.5,"medium - largest HBM supplier, not exclusive"
+Samsung,HBM memory,South Korea,0.25,medium - qualifying/ramping HBM supplier
+Micron,HBM memory,USA,0.25,medium - smaller HBM allocation
+Foxconn/Wistron,Assembly/packaging,Taiwan,0.6,low-medium - among several ODM partners
+Amkor,Advanced packaging,Various,0.2,low - CoWoS/packaging capacity partner

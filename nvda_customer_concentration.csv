@@ -1,0 +1,10 @@
+period,customer,pct_revenue,source
+FY2024 (Annual),Customer A,13,FY24 10-K
+FY2026 (Annual),Customer A,22,FY26 10-K
+FY2026 (Annual),Customer B,14,FY26 10-K
+Q2 FY2026,Customer A,23,Q2 FY26 10-Q
+Q2 FY2026,Customer B,16,Q2 FY26 10-Q
+Q3 FY2026,Customer A,22,Q3 FY26 10-Q
+Q3 FY2026,Customer B,15,Q3 FY26 10-Q
+Q3 FY2026,Customer C,13,Q3 FY26 10-Q
+Q3 FY2026,Customer D,11,Q3 FY26 10-Q
