@@ -1,4 +1,4 @@
-# NVDA Customer & Supply-Chain Concentration Risk Mapper
+# NVIDIA Customer & Supply-Chain Concentration Risk Analysis
 
 A Python tool that quantifies NVIDIA's customer revenue concentration and
 supply-chain geographic exposure using disclosures pulled from public SEC
