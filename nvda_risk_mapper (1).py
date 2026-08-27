@@ -240,6 +240,55 @@ def build_network_graph(customers_df, suppliers_df, latest_period, save_path):
     plt.close()
     print(f"\nNetwork graph saved to: {save_path}")
 
+# ---------------------------------------------------------------------
+# 3. HISTORICAL CUSTOMER CONCENTRATION
+# ---------------------------------------------------------------------
+
+
+
+
+
+er_concentration(df, save_path):
+    """Plot disclosed customer concentration by reporting period."""
+    historical = (
+        df.groupby("period")["pct_revenue"]
+        .sum()
+        .reset_index()
+    )
+
+    fig, ax = plt.subplots(figsize=(10, 6))
+
+    ax.plot(
+        historical["period"],
+        historical["pct_revenue"],
+        marker="o",
+        linewidth=2
+    )
+
+    ax.set_title(
+        "NVIDIA Disclosed Customer Concentration",
+        fontsize=13,
+        fontweight="bold"
+    )
+    ax.set_xlabel("Reporting Period")
+    ax.set_ylabel("Disclosed customer revenue (%)")
+    ax.set_ylim(0, 70)
+
+    for x, y in zip(historical["period"], historical["pct_revenue"]):
+        ax.annotate(
+            f"{y:.0f}%",
+            (x, y),
+            textcoords="offset points",
+            xytext=(0, 8),
+            ha="center"
+        )
+
+    plt.xticks(rotation=30, ha="right")
+    plt.tight_layout()
+    plt.savefig(save_path, dpi=150, bbox_inches="tight")
+    plt.close()
+
+    print(f"\nCustomer concentration chart saved to: {save_path}")
 
 # ---------------------------------------------------------------------
 # 4. MAIN
@@ -256,7 +305,11 @@ def main():
     print(memo)
 
     build_network_graph(customers_df, suppliers_df, latest_period,
-                         "/home/claude/nvda_supply_chain/nvda_network_graph.png")
+                         "/home/claude/nvda_supply_chain/nvda_network_graph.png") 
+      plot_customer_concentration(
+        customers_df,
+        "/home/claude/nvda_supply_chain/customer_concentration.png"
+    )
 
     # Save outputs
     customers_df.to_csv("/home/claude/nvda_supply_chain/nvda_customer_concentration.csv", index=False)
