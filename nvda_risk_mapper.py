@@ -28,7 +28,10 @@ import pandas as pd
 import networkx as nx
 import matplotlib.pyplot as plt
 import matplotlib.patches as mpatches
+from pathlib import Path
 
+OUTPUT_DIR = Path("nvda_supply_chain")
+OUTPUT_DIR.mkdir(exist_ok=True)
 pd.set_option("display.width", 120)
 
 # ---------------------------------------------------------------------
@@ -301,21 +304,33 @@ def main():
     memo = generate_summary_memo(latest_period, top_n_pct, hhi, geo_pct, flags)
     print(memo)
 
-    build_network_graph(customers_df, suppliers_df, latest_period,
-                         "/home/claude/nvda_supply_chain/nvda_network_graph.png")
+    build_network_graph(
+        customers_df,
+        suppliers_df,
+        latest_period,
+        OUTPUT_DIR / "nvda_network_graph.png"
+    )
 
     plot_customer_concentration(
         customers_df,
-        "/home/claude/nvda_supply_chain/customer_concentration.png"
+        OUTPUT_DIR / "customer_concentration.png"
     )
 
     # Save outputs
-    customers_df.to_csv("/home/claude/nvda_supply_chain/nvda_customer_concentration.csv", index=False)
-    suppliers_df.to_csv("/home/claude/nvda_supply_chain/nvda_supplier_estimates.csv", index=False)
-    with open("/home/claude/nvda_supply_chain/nvda_risk_memo.txt", "w") as f:
+    customers_df.to_csv(
+        OUTPUT_DIR / "nvda_customer_concentration.csv",
+        index=False
+    )
+
+    suppliers_df.to_csv(
+        OUTPUT_DIR / "nvda_supplier_estimates.csv",
+        index=False
+    )
+
+    with open(OUTPUT_DIR / "nvda_risk_memo.txt", "w") as f:
         f.write(memo)
 
-    print("\nAll outputs saved to /home/claude/nvda_supply_chain/")
+    print(f"\nAll outputs saved to: {OUTPUT_DIR.resolve()}")
 
 
 if __name__ == "__main__":
