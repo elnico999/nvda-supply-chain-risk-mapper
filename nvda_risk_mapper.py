@@ -301,7 +301,7 @@ def main():
     memo = generate_summary_memo(latest_period, top_n_pct, hhi, geo_pct, flags)
     print(memo)
 
-      build_network_graph(customers_df, suppliers_df, latest_period,
+    build_network_graph(customers_df, suppliers_df, latest_period,
                          "/home/claude/nvda_supply_chain/nvda_network_graph.png")
 
     plot_customer_concentration(
