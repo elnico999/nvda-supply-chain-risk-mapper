@@ -1,7 +1,7 @@
 """
 NVDA Supply Chain & Customer Concentration Risk Mapper
 --------------------------------------------------------
-Author: [Your Name]
+Author: Nicolas Pankhurst
 Purpose: Quantify NVIDIA's customer concentration risk and geographic/
 supply-chain exposure using disclosures from public SEC filings, and
 visualize the relationship network.
