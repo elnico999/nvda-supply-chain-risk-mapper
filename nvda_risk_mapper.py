@@ -224,7 +224,15 @@ def build_network_graph(customers_df, suppliers_df, latest_period, save_path):
                             edge_color="gray", arrows=True,
                             arrowsize=15, connectionstyle="arc3,rad=0.05", ax=ax)
 
-    edge_labels = {(u, v): f"{G[u][v]['weight']:.0f}%" for u, v in G.edges()}
+  edge_labels = {}
+
+for u, v in G.edges():
+    weight = G[u][v]["weight"]
+
+    if u == "NVDA":
+        edge_labels[(u, v)] = f"Est. dependency {weight:.0%}"
+    else:
+        edge_labels[(u, v)] = f"{weight:.0f}% revenue"
     nx.draw_networkx_edge_labels(G, pos, edge_labels=edge_labels, font_size=8, ax=ax)
 
     legend_elements = [
